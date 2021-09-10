@@ -24,5 +24,14 @@ def form_valid(self, form):
     login(self.request, user)
     return redirect('/')
 
+class agent_register(CreateView):
+    model = User
+    form_class = AgentSignUpForm
+    template_name = 'registration/agent_register.html'
+
+def form_valid(self, form):
+    user = form.save()
+    login(self.request, user)
+    return redirect('/')
 
 

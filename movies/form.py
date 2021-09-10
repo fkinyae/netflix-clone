@@ -13,7 +13,7 @@ class CustomerSignUpForm(UserCreationForm):
    last_name = forms.CharField(required=True)
    email = forms.EmailField(required=True)
    phone_number = forms.CharField(required=False)
-   location = forms.CharField(required=True)
+   Address = forms.CharField(required=True)
 
 class Meta(UserCreationForm.Meta):
     model = User
@@ -28,10 +28,13 @@ class Meta(UserCreationForm.Meta):
         user.save()
         customer = Customer.objects.create(user=user)
         customer.phone_number = self.cleaned_data.get('phone_number')
-        customer.location = self.cleaned_data.get('location')
+        customer.Address = self.cleaned_data.get('location')
         customer.save()
         return user
 
-
-
-
+class AgentSignUpForm(UserCreationForm):
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+    phone_number = forms.CharField(required=False)
+    designation = forms.CharField(required=True)

@@ -19,6 +19,10 @@ class customer_register(CreateView):
     form_class = CustomerSignUpForm
     template_name = 'registration/customer_register.html'
 
+def form_valid(self, form):
+    user = form.save()
+    login(self.request, user)
+    return redirect('/')
 
 
 

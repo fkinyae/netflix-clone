@@ -14,6 +14,11 @@ def welcome(request):
 def register(request):
     return render(request, 'registration/register.html')
 
+class customer_register(CreateView):
+    model = User
+    form_class = CustomerSignUpForm
+    template_name = 'registration/customer_register.html'
+
 
 
 

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load bootstrap4  %}
+{% load static %}
+
+{% block styles %} 
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"> 
+  {% endblock %}
+
+{% block content %}
+                
+                <div class="loginform">
+                    <form action="" method="POST">{% csrf_token %}
+                        <div class="container">   
+                            <center><h4 style="font-weight: bold;"> User Login Form </h4> </center>   
+
+                            <label>Username : </label>   
+                            <input type="text" placeholder="Enter Username" name="username" required>  
+                            <label>Password : </label>   
+                            <input type="password" placeholder="Enter Password" name="password" required>  
+                            <button type="submit">Login</button>   
+                            <input type="checkbox" checked="checked"> Remember me   
+                            <button type="button" class="cancelbtn"> Cancel</button>   
+                            Forgot <a href="#"> password? </a>   
+                        </div>   
+                    </form>     
+                </div>
+
+{% endblock %}

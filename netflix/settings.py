@@ -120,7 +120,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-AUTH_USER_MODEL='movies.User'
+AUTH_USER_MODEL='accounts.User'
 
 
 # Static files (CSS, JavaScript, Images)

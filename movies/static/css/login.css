@@ -1,0 +1,82 @@
+.loginform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+
+}
+center {
+    font-weight: bold;
+}
+
+Body {  
+    font-family: Calibri, Helvetica, sans-serif;  
+    background-image: url(https://bit.ly/2E3scwW);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #b3b3b3;
+    background-blend-mode: multiply;
+  }  
+  button {   
+         background-color: red;   
+         width: 100%;  
+          color: orange;   
+          padding: 15px;   
+          margin: 10px 0px;   
+          border: none;   
+          cursor: pointer; 
+          color: white;
+          font-weight: bold;  
+           }   
+  
+   input[type=text], input[type=password] {   
+          width: 100%;   
+          margin: 8px 0;  
+          padding: 12px 20px;   
+          display: inline-block;   
+          box-sizing: border-box;   
+      }  
+   button:hover {   
+          opacity: 0.7;   
+      }   
+    
+       
+   .container {   
+          padding-left: 15%;
+          padding-right: 15%;
+          padding-top: 10%;
+          background-color:  rgba(0, 0, 0, 0.75); 
+          width: 40vw;
+          height: 80vh;
+      }   
+
+#signin {
+    background-color: red;
+    color: white;
+    border-color: red;
+    height: 53px;
+    margin-top: 10%;
+
+}
+#forminputs {
+    background-color: rgba(65, 62, 62, 0.8);
+    height: 53px;
+    border-color:  #8c8c8c;
+    margin-bottom: 5%;
+    opacity: 1;
+}
+
+::placeholder {
+    color: white;
+  }
+
+.login__secondary-cta {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+  }

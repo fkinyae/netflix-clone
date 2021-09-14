@@ -1,0 +1,38 @@
+{% load bootstrap4  %}
+{% load static %}
+
+{% block styles %} 
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"> 
+  {% endblock %}
+
+{% block content %}
+                
+                <div class="loginform">
+                    <form action="" method="POST">{% csrf_token %}
+                        <div class="container">   
+                            <h3 style="font-weight: bold; color: white;">Sign In</h3>  
+
+                            <input class="form-control" id="forminputs" type="text" placeholder="Username" name="username" required> 
+                             
+                            <input  class="form-control" id="forminputs"  type="password" placeholder="Password" name="password" required> 
+                            
+                            <button type="submit" class="form-control" id="signin">Sign In</button>  
+
+                            
+                                <input type="checkbox" value="lsRememberMe" id="rememberMe" style="color: whitesmoke;"> <label for="rememberMe">Remember me</label>  
+                            
+
+                            Forgot <a href="#"> password? </a> 
+                            <div class="row" style="color: grey;">
+                                New To Netflix? <a href="#"></a> 
+                                <span style="color: white;" >Sign Up now</span>
+
+
+                            </div>
+                              
+                        </div>   
+                    </form>     
+                </div>
+
+{% endblock %}

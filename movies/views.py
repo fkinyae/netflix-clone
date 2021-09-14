@@ -19,7 +19,7 @@ def login_view(request):
             context = {"error": "Invalid username or password"}
             return render(request, "accounts/login.html",context)
         login(request,user)
-        return redirect('/')
+        return redirect('welcome')
 
     return render(request, "accounts/login.html")
     

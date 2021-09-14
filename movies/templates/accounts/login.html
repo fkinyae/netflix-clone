@@ -1,4 +1,3 @@
-{% extends "base.html" %}
 {% load bootstrap4  %}
 {% load static %}
 
@@ -12,16 +11,26 @@
                 <div class="loginform">
                     <form action="" method="POST">{% csrf_token %}
                         <div class="container">   
-                            <center><h4 style="font-weight: bold;"> User Login Form </h4> </center>   
+                            <h3 style="font-weight: bold; color: white;">Sign In</h3>  
 
-                            <label>Username : </label>   
-                            <input type="text" placeholder="Enter Username" name="username" required>  
-                            <label>Password : </label>   
-                            <input type="password" placeholder="Enter Password" name="password" required>  
-                            <button type="submit">Login</button>   
-                            <input type="checkbox" checked="checked"> Remember me   
-                            <button type="button" class="cancelbtn"> Cancel</button>   
-                            Forgot <a href="#"> password? </a>   
+                            <input class="form-control" id="forminputs" type="text" placeholder="Username" name="username" required> 
+                             
+                            <input  class="form-control" id="forminputs"  type="password" placeholder="Password" name="password" required> 
+                            
+                            <button type="submit" class="form-control" id="signin">Sign In</button>  
+
+                            
+                                <input type="checkbox" value="lsRememberMe" id="rememberMe" style="color: whitesmoke;"> <label for="rememberMe">Remember me</label>  
+                            
+
+                            Forgot <a href="#"> password? </a> 
+                            <div class="row" style="color: grey;">
+                                New To Netflix? <a href="#"></a> 
+                                <span style="color: white;" >Sign Up now</span>
+
+
+                            </div>
+                              
                         </div>   
                     </form>     
                 </div>

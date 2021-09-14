@@ -1,29 +1,22 @@
-{% load bootstrap4 %}
-{% load static%}
+{% load bootstrap4 %} {% load static%}
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-
-  {% if title %}
-  <title>Netflix - {{title}}</title>
-  {% else %}
+    <meta charset="utf-8"> {% if title %}
+    <title>Netflix - {{title}}</title>
+    {% else %}
     <title> Netflix </title>
-  {% endif %}
-
-  {% block styles %}
-    {% bootstrap_css %}
-  {% endblock %}
+    {% endif %} {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="signup.css"> {% endblock %}
 
 </head>
+
 <body>
-    {% include "navbar.html" %}
-
-    {% block content %} <h1 class='text-center'>Movies</h1> {%endblock%}
-
-    {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     {% bootstrap_javascript %}
-    {% endblock %}
+    {% include "navbar.html" %} {% block content %}
+    <h1 class='text-center'>Movies</h1> {%endblock%} {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %} {% endblock %}
 </body>
+
 </html>

@@ -50,3 +50,6 @@ class AgentSignUpForm(UserCreationForm):
         agent = Agent.objects.create(user=user)
         agent.save()
         return user
+    
+    
+    

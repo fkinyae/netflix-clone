@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate,login, logout 
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy,reverse
 from .models import User
 from django.contrib import messages
 from django.views.generic import CreateView
@@ -38,7 +38,7 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-class    PasswordsChangeView(PasswordChangeView):
+class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('welcome')
     
@@ -49,21 +49,22 @@ class customer_register(CreateView):
     model = User
     form_class = CustomerSignUpForm
     template_name = 'accounts/customer_register.html'
+    
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('login')
 
-def form_valid(self, form):
-    user = form.save()
-    login(self.request, user)
-    return redirect('')
 
 class agent_register(CreateView):
     model = User
     form_class = AgentSignUpForm
     template_name = 'accounts/agent_register.htm'
 
-def form_valid(self, form):
-    user = form.save()
-    login(self.request, user)
-    return redirect('')
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('login')
 
 
 

@@ -1,0 +1,31 @@
+        body {
+            background-image: url(https://bit.ly/2E3scwW);
+            background-size: cover;
+        }
+        
+        .card1 {
+            background-color: rgb(5, 5, 5, 0.8);
+            position: relative;
+            top: 150%;
+            color: white;
+            text-align: center;
+            border-radius: 18px;
+            width: 30%;
+        }
+        
+        .card {
+            background-color: rgb(5, 5, 5, 0.8);
+            color: white;
+        }
+        
+        input[type='submit'] {
+            background-color: red;
+            margin-top: 20px;
+        }
+        
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+            background-color: rgba(65, 62, 62, 0.8);
+            color: black;
+        }

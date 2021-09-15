@@ -7,6 +7,10 @@ from .models import User
 from django.contrib import messages
 from django.views.generic import CreateView
 from django.shortcuts import redirect, render
+from django.contrib.auth import login, logout, authenticate
+from .form import CustomerSignUpForm, AgentSignUpForm
+from django.contrib.auth.forms import AuthenticationForm
+from .models import User
 
 
 
@@ -39,27 +43,29 @@ class    PasswordsChangeView(PasswordChangeView):
     success_url = reverse_lazy('welcome')
     
 def register(request):
-    return render(request, 'registration/register.html')
+    return render(request, 'accounts/register.html')
 
 class customer_register(CreateView):
     model = User
     form_class = CustomerSignUpForm
-    template_name = 'registration/customer_register.html'
+    template_name = 'accounts/customer_register.html'
 
 def form_valid(self, form):
     user = form.save()
     login(self.request, user)
-    return redirect('/')
+    return redirect('')
 
 class agent_register(CreateView):
     model = User
     form_class = AgentSignUpForm
-    template_name = 'registration/agent_register.html'
+    template_name = 'accounts/agent_register.htm'
 
 def form_valid(self, form):
     user = form.save()
     login(self.request, user)
-    return redirect('/')
+    return redirect('')
+
+
 
 
     
